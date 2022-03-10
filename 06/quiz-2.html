@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Circle 객체</title>
+	<style>
+		body {
+			text-align: center;
+			font-size: 1.2em;
+			line-height: 2em;
+		}
+	</style>
+</head>
+
+<body>
+	<script>
+		var r = prompt("반지름 입력 : ");
+
+		function Circle(radius){
+			this.radius = radius;
+			this.circum1 = function (){
+				return (radius * 2 * Math.PI).toFixed(0);
+			};
+			this.area1 = function (){
+				return (radius * radius * Math.PI).toFixed(0);
+			};
+		}
+
+		var circle1 = new Circle(r);
+		document.write(circle1.circum1(), circle1.area1());
+
+	</script>
+</body>
+
+</html>

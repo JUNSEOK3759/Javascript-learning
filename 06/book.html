@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>도서 관리 프로그램 - 객체 만들기</title>
+	<link rel="stylesheet" href="css/book.css">
+</head>
+
+<body>
+	<script>
+		var a = prompt("책 타이틀 입력 : ");
+		var b = prompt("책 저자 입력 : ");
+		var c = prompt("책 페이지 입력 : ");
+		var d = prompt("책 가격 입력 : ");
+		function Book(title, author, pages, price){
+			this.title = title;
+			this.author = author;
+			this.pages = pages;
+			this.price = price;
+		}
+
+		var inp1 = new Book(a, b, c, d);
+		document.write(inp1.title + " " +  inp1.author + " " + inp1.pages + " " + inp1.price);
+
+
+
+	</script>
+</body>
+
+</html>
