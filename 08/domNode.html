@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DOM 트리에 노드 추가하기</title>
+	<style>
+		.accent {
+			border: 1px solid #222;
+			padding: 15px 20px;
+			background-color: #eee;
+		}
+
+		.bold {
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- <p class = 'accent'>주문이 완료되었습니다.</p> -->
+	<script>
+		
+		// 위의 주석문장을 스크립트에서 만들기 위한 소스
+		var newP = document.createElement("p");
+		var newText = document.createTextNode('주문이 완료되었습니다.');
+		// <p></p> 안에 newText값을 넣기 위한 appendChild
+		newP.appendChild(newText);
+
+		var newAttr = document.createAttribute("class");
+		newAttr.value = "accent";
+		// <p> 안에 class = "accent를 넣기 위한 setAttributeNode
+		newP.setAttributeNode(newAttr);
+		// html의 body 태그 안에 값을 넣기 위한 appendChild
+		document.body.appendChild(newP);
+	</script>
+</body>
+
+</html>

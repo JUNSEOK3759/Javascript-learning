@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>여행 준비물 점검 목록</title>
+	<link rel="stylesheet" href="css/input.css">
+	<link rel="stylesheet" href="css/list.css">
+</head>
+
+<body>
+	<div id="wrapper">
+		<h2>여행 준비물 점검 목록</h2>
+		<form>
+			<input type="text" id="item" autofocus="true">
+			<button type="button" id="add" class="addBtn">추가</button>
+		</form>
+		<div id="itemList"></div>
+	</div>
+
+	<script>
+		var itemList = [];
+		var addBtn = document.querySelector('#add');
+		addBtn.addEventListener("click", addList);
+
+		function addList() {
+			var item = document.querySelector('#item').value;
+			if (item != null) {
+				itemList.push(item);
+				document.querySelector('#item').value = "";
+				document.querySelector('#item').focus();
+			}
+			showList();
+		}
+
+		function showList() {
+			var list = "<ul>";
+				for (var i=0; i<itemList.length; i++) {  // 배열 요소마다 반복 
+				list += "<li>" + itemList[i] + "<span class='close' id=" + i + ">X</span></li>";  // 요소와 삭제 버튼을 <li>~</li>로 묶음
+			}
+			list += "</ul>";
+
+			document.querySelector('#itemList').innerHTML = list;
+
+			var remove = document.querySelectorAll(".close");  // 삭제 버튼을 변수로 저장. 배열 형태가 됨
+			for(var i = 0; i < remove.length; i++) {  // remove 배열의 요소 모두를 확인
+				remove[i].addEventListener("click", removeList);  // 요소를 클릭하면 removeList() 실행
+			}
+
+		}
+
+		function removeList() {
+			console.log(this);
+		}
+
+	</script>
+
+</html>
