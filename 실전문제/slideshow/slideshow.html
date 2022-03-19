@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<title>Slideshow</title>
+	<link rel="stylesheet" href="css/slideshow.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="container">
+			<img src="images/pic-1.jpg">
+			<img src="images/pic-2.jpg">
+			<img src="images/pic-3.jpg">
+			<img src="images/pic-4.jpg">
+			<button id="prev">&lang;</button>
+			<button id="next">&rang;</button>
+		</div>
+	</div>
+	<script>
+		var slides = document.querySelectorAll("#container > img");
+		var prev = document.querySelector("#prev");
+		var next = document.querySelector("#next");
+		var current = 0;
+
+		function showSlide(n){
+			for (var i = 0; i < slides.length; i++){
+				slides[i].style.display = 'none';
+			}
+			slides[n].style.display = 'block';
+		}
+		showSlide(current);
+		function prevSlide(){
+			if (current > 0){
+				current -= 1;
+			}
+			else {
+				current = slides.length -1;
+			}
+			showSlide(current);
+		}
+		prev.onclick = prevSlide;
+		function nextSlide(){
+			if (current != slides.length -1) {
+				current += 1
+			}
+			else {
+				current = 0;
+			}
+			showSlide(current);
+		}
+		next.onclick = nextSlide;
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<title>숫자 맞히기</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/upanddown.css">
+</head>
+
+<body>
+	<div id="wrapper">
+		<h1>숫자 맞히기 게임</h1>
+		<p>1에서 100 사이의 수를 입력하세요.</p>
+		<form action="">
+			<label><input type="text" onkeyup="enterkey(event)" id="try" autocomplete="off" autofocus></label>
+			<input type="button" value="확인" id="check" class="btn btn-1" onclick="finding()">
+			<input type="button" value="다시" id="reset" class="btn btn-2" onclick="window.location.reload()">
+		</form>
+		<div id="display" class="output"></div>
+		<div id="counter" class="footer"></div>
+	</div>
+
+	<script>
+		var count1 = 0
+		var comnum = Math.floor(Math.random() * 100) + 1;
+
+		document.getElementById("try").onkeypress = function (e) {  //키보드 클릭해서 함수 실행
+			if (e.keyCode == 13 || e.which == 13) {  // enter 키인지 체크
+				finding();  // 함수 실행
+				return false;  // keypress일 때 브라우저가 할 기본 동작 취소
+			}
+		}
+		function finding() {
+			var usernum = document.querySelector("#try").value;
+
+			if (usernum >= 1 && usernum <= 100) {
+				if (usernum > comnum) {
+					document.querySelector("#display").innerHTML = "up"
+				}
+				else if (usernum < comnum) {
+					document.querySelector("#display").innerHTML = "down"
+				}
+				else {
+					document.querySelector("#display").innerHTML = "정답"
+				}
+				document.getElementById("try").value = "";
+				count1++;
+				document.querySelector("#counter").innerHTML = count1;
+			}
+
+			else {
+				alert("1부터 100 입력하세요 선생님;");
+			}
+		}
+	</script>
+</body>
+
+</html>
