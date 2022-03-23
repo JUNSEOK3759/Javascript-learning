@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let map = new Map();
+
+        // map.set('1', 'fuck');
+        // map.set(1, 'you');
+        // map.set(2, 'love');
+
+        // console.log(map.get('1') + map.get(1));
+        // console.log(map.size);
+
+
+        // 맵은 키를 객체로 허용함.
+        // let john = { name: "John" };
+
+        // // 고객의 가게 방문 횟수를 세본다고 가정해 봅시다.
+        // let visitsCountMap = new Map();
+
+        // // john을 맵의 키로 사용하겠습니다.
+        // visitsCountMap.set(john, 123);
+
+        // console.log(visitsCountMap.get(john));
+
+
+        // 다음과 같이 체이닝도 가능
+
+        // let map = new Map();
+
+        // map.set('1', 'str1')
+        //     .set(1, 'num1')
+        //     .set(true, 'bool1');
+
+        // console.log(map.size); // 3
+
+        // let map = new Map([
+        //     ['balenciaga', 5000000],
+        //     ['ourlegacy', 1000000],
+        //     ['Supreme', 1000010]
+        // ])
+
+        // for(let i of map.keys()){
+        //     console.log(i)
+        // }
+
+        // for (let j of map.values()){
+        //     console.log(j)
+        // }
+
+        // for (let k of map){
+        //     console.log(k)
+        // }
+
+        // map.forEach((key, value, map) =>{
+        //     console.log(`${key} : ${value}`);
+        // })
+
+
+
+        // 맵을 객체로 바꾸기
+
+        // let prices = Object.fromEntries([
+        //     ['banana', 1],
+        //     ['apple', 2],
+        //     ['fuck', 3]
+        // ])
+
+        // console.log(prices);
+
+        // let map = new Map();
+        // map.set('banana', 1);
+        // map.set('orange', 2);
+        // map.set('meat', 4);
+
+        // let obj = Object.fromEntries(map);
+
+        // console.log(obj)
+
+        function unique(arr) {
+            let sets = new Set(arr);
+            return sets
+        }
+
+        let values = ["Hare", "Krishna", "Hare", "Krishna",
+            "Krishna", "Krishna", "Hare", "Hare", ":-O"
+        ];
+
+        console.log( unique(values) );
+
+
+    </script>
+</body>
+
+</html>

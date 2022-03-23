@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // // 중간에 칸 띄우면 해당번째 요소 생략 가능
+        // let [firstName, , title] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+        // console.log(title); // Consul
+
+        // let user = {
+        //     name : 'john',
+        //     age : 30
+        // }
+
+        // for (let [key, value] of Object.entries(user)){
+        //     console.log(key, value);
+        // }
+
+        // let user = new Map();
+
+        // user.set('name', 'john');
+        // user.set('age', 'john');
+
+        // for(let [key, value] of user){
+        //     console.log(key, value)
+        // }
+
+        // 변수 교환 트릭
+        // let guest = 'fuck';
+        // let admin = 'you';
+
+        // [guest, admin] = [admin, guest];
+
+        // console.log(admin); // fuck
+        // console.log(guest); // you
+
+
+        // 기본값
+        // let [name = "Guest", surname = "Anonymous"] = ["Julius"];
+
+        // console.log(name);    // Julius (배열에서 받아온 값)
+        // console.log(surname); // Anonymous (기본값)
+
+
+        // 다음과 같이 객체 분해 가능
+
+        // let asd = {
+        //     title : 'balenciaga',
+        //     size : 's',
+        //     price : 1000000
+        // }
+
+        // let {title, size, price} = asd;
+
+        // console.log(title);
+        // console.log(size);
+        // console.log(price);
+
+        // let asd = {
+        //     title : 'balenciaga',
+        //     sales : 30
+        // }
+
+
+        // //객체 분해할 때, 없는 key를 만들어 입력을 받을 수 있다.
+        // // sizeofClothes : s처럼 약자 사용이 가능하다.
+        // // 입력값을 받더라도 이미 값이 있으면 입력값 창이 뜨지 않는다. 
+
+        // let{sizeofclothes : s = 's', price = +prompt("price? : "), sales = +prompt("sales? : "), title} = asd;
+        // console.log(s)
+        // console.log(price);
+        // console.log(sales);
+        // console.log(title);
+
+        // let options = {
+        //     title: "Menu",
+        //     height: 200,
+        //     width: 100
+        // };
+
+        // // title = 이름이 title인 프로퍼티
+        // // rest = 나머지 프로퍼티들
+        // let { title, ...rest } = options;
+
+        // // rest를 표현하면 다음과 같이 rest.height로 표현이 가능하다.
+        // console.log(rest.height);  // 200
+        // console.log(rest.width);   // 100
+
+
+        // 다음과 같이 간단하게도 분해할 수 있다.
+
+        // let title, width, height;
+
+        // // 에러가 발생하지 않습니다.
+        // ({ title, width, height } = { title: "Menu", width: 200, height: 100 });
+
+        // console.log(title); // Menu
+
+        // let user = { name: "John", years: 30 };
+
+        // let {name, years : age, isAdmin = true} = user;
+
+        // console.log(age);
+
+
+        // 중첩 구조 분해하는 방법은 아래와 같다.
+
+        // let options = {
+        //     size : {
+        //         width : 100,
+        //         height : 200
+        //     },
+        //     items : ['cake', 'donut'],
+        //     extra : true
+        // };
+
+        // let {
+        //     size :{
+        //         width , 
+        //         height : s
+        //     },
+        //     items : [item1, item2],
+        //     title = "Menu"
+        // } = options;
+
+        // console.log(width); // 100
+        // console.log(s); // 200
+        // console.log(item1); // cake
+        // console.log(item2); // donut
+        // console.log(title); // Menu
+
+
+        // 중첩도 다음과 같이 함수를 이용하여 분해가 가능하다.
+
+        // let options = {
+        //     title : "My Menu",
+        //     items : ['item1', 'item2']
+        // }
+
+        // function showMenu({title = 'untitled', width = 200, height : h = 100, items = []}) {
+        //     console.log(`${title} ${width} ${h}`);
+        //     console.log(items)
+        //     console.log(items[0])
+        // }
+
+        // showMenu(options);
+
+        // let options = {
+        //     title: "My menu",
+        //     items: ["Item1", "Item2"]
+        // };
+
+        // function showMenu({
+        //     title = "Untitled",
+        //     width: w = 100,  // width는 w에,
+        //     height: h = 200, // height는 h에,
+        //     items: [item1, item2] // items의 첫 번째 요소는 item1에, 두 번째 요소는 item2에 할당함
+        // }) {
+        //     console.log(`${title} ${w} ${h}`); // My Menu 100 200
+        //     console.log(item1); // Item1
+        //     console.log(item2); // Item2
+        // }
+
+        // showMenu(options);
+
+
+        // 아래와 같이 함수 안에 아무런 인수를 주지 않는다면,
+        // 값을 선언해준 후 뒤에 = {}을 입력해주면 오류가 나지 않는다.
+        // function showMenu({ title = "Menu", width = 100,
+        //  height = 200 } = {}) {
+        //     console.log(`${title} ${width} ${height}`);
+        // }
+
+        // showMenu(); // Menu 100 200
+
+
+        // 최고 급여자 이름 찾기 
+
+        // let salaries = {
+        //     "John": 100,
+        //     "Pete": 300,
+        //     "Mary": 250
+        // };
+
+        // function topSalary(salaries) {
+        //     let max = 0;
+        //     let name = null;
+        //     for (let [key, value] of Object.entries(salaries)){
+        //        if (value > max){
+        //             max = value;
+        //             name = key;
+        //         }
+        //     }
+        //     return name;
+        // }
+
+        // console.log(topSalary(salaries));
+
+
+    </script>
+</body>
+
+</html>

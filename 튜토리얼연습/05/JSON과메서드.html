@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // let student = {
+        //     name: 'John',
+        //     age: 30,
+        //     isAdmin: false,
+        //     courses: ['html', 'css', 'js'],
+        //     wife: null
+        // };
+
+        // let json = JSON.stringify(student);
+
+        // console.log(typeof(json)); // 문자열이네요!
+
+        // console.log(json);
+
+        // let meetup = {
+        //     title: "Conference",
+        //     room: {
+        //         number: 23,
+        //         participants: ["john", "ann"]
+        //     }
+        // };
+
+        // console.log(JSON.stringify(meetup));
+
+        let room = {
+            number : 23
+        };
+
+        let meetup = {
+            title : "Conference",
+            participants : [{name : 'john'}, {name : 'alice'}],
+            place : room
+        };
+
+        room.occupiedBy = meetup;
+
+        console.log(JSON.stringify(meetup, ['title', 'participants', 'place', 'name', 'number']));
+
+
+
+
+
+    </script>
+</body>
+
+</html>

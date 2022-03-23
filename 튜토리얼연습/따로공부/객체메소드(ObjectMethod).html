@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var a = 'age';
+
+        // var user = {
+        //     name : 'Mike',
+        //     [a] : 30
+        // }
+
+        // console.log(user);
+
+
+        // assign은 user라는 객체를 복사한다.
+        //그 복제품의 값을 바꿔도 원제품은 바뀌지 않는다.
+        // const user = {
+        //     name: 'mike',
+        //     age: 30
+        // }
+        // const cloneUser = Object.assign({}, user);
+        // cloneUser.name = 'tom';
+        // console.log(user === cloneUser); // false
+        // console.log(user); // {name: 'mike', age: 30}
+        // console.log(cloneUser); // {name: 'tom', age: 30}
+
+
+        // {}안에 값을 입력해주면 값이 저장된채로 복제된다.
+        // const cloneUser1 = Object.assign({gender : 'male'}, user);
+        // console.log(cloneUser1); // {gender: 'male', name: 'mike', age: 30}
+        // key값이 같은 것을 넣는다면 원제품이 덮어쓴다.
+        // const cloneUser2 = Object.assign({name : 'tom'}, user);
+        // console.log(cloneUser2); // {name: 'mike', age: 30}
+
+        // 여러개의 객체를 하나로 합칠 수도 있음
+        // const info1 = {
+        //     gender : 'male'
+        // }
+
+        // const info2 = {
+        //     clothes : 'Balenciaga'
+        // }
+
+        // const cloneUser3 = Object.assign(user, info1, info2);
+        // console.log(cloneUser3);
+
+        // Object.keys(user) => user 안의 키값을 배열로 반환
+        // Object.values(user) => user 안의 밸류값을 배열로 반환
+        // Object.entries(user) => user 안의 값을 배열로 반환
+        // const user = {
+        //     name : 'mike',
+        //     age : 30,
+        //     gender : 'male'
+        // }
+
+        // console.log(Object.keys(user)); // ['name', 'age', 'gender']
+        // console.log(Object.values(user)); // ['mike', 30, 'male']
+        // console.log(Object.entries(user)); // [Array(2), Array(2), Array(2)]
+
+        // const arr = [
+        //     ["name", "mike"],
+        //     ["age", 30],
+        //     ['gender', 'male']
+        // ]
+
+        // console.log(Object.fromEntries(arr)); // {name: 'mike', age: 30, gender: 'male'}
+
+
+        // let n = "name";
+        // let a = "age";
+
+        // const user = {
+        //     [n] : 'mike',
+        //     [a] : 30,
+        //     [1 + 4] : 5
+        // }
+
+        // console.log(user);
+
+        // function makeObj(key, val) {
+        //     return {
+        //         [key]: val
+        //     }
+        // }
+
+        // const obj = makeObj("나이", 33);
+
+        // console.log(obj);   
+
+        // const user = {
+        //     name : 'mike',
+        //     age : 30
+        // }
+
+
+        // 잘못된 복사임. Object.assign을 사용해서 복사해야함.
+        // const user2 = user;
+        // user2.name = 'tom';
+
+        // const user2 = Object.assign({}, user);
+        // user2.name = 'tom';
+
+        // console.log(user) // {name: 'mike', age: 30}
+        // console.log(user2) //{name: 'tom', age: 30}
+
+
+        // keys, values, entries는 user라는 객체(딕셔너리) 안 값들을
+        // 배열로 가져온다.
+        // const result = Object.keys(user);
+        // const result2 = Object.values(user);
+        // const result3 = Object.entries(user);
+        // console.log(result); // ['name', 'age']
+        // console.log(result2); // ['mike', 30]
+        // console.log(result3); // [Array(2), Array(2)] 
+        
+        
+        // fromEntries는 배열을 객체(딕셔너리)로 만들어줌 
+        let arr = [
+            ['mon', '월'],
+            ['tue', '화']
+        ]
+
+        const result = Object.fromEntries(arr);
+
+        console.log(result); // {mon: '월', tue: '화'}
+
+    </script>
+</body>
+
+</html>
