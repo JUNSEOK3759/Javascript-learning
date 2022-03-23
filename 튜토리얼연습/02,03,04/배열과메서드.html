@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // splice(x,y,z,w) x자리부터 y까지 없애고 z, w 추가한다.
+        // var arr = [1,2,5];
+        // arr.splice(2,0,3,4);
+        // arr.splice(-1, 0, 3, 4, 5);
+        // document.write(arr);
+
+
+
+        // arr.concat()은 배열에 그 당시만 붙여서 출력되는 것임. 
+        // arr 값에 영향 X
+        // var arr = [1, 2];
+
+        // var arrayLike = {
+        //     0 : "something",
+        //     1 : "else",
+        //     [Symbol.isConcatSpreadable] : true,
+        //     length : 2
+        // }
+
+        // document.write(arr.concat(arrayLike));
+        // document.write("\n" + arr);
+
+        // ['bilbo', 'gandalf', 'nazgul']. forEach((item, index, array) => {
+        //     document.write(item + " is at index " + index + " in " + array + "<br>");
+        // })
+
+        // indexOf(x)는 x값이 배열의 몇 번째에 있는지 출력해준다.
+        // 만약 배열 안에 없으면 -1이 출력된다.
+        // includes(x)는 x값이 배열 안에 있으면 true, 없으면 false 출력한다.
+        // var arr = [1, 0, false];
+
+        // document.write(arr.indexOf(1) + "<br>");
+        // document.write(arr.indexOf(0) + "<br>");
+        // document.write(arr.indexOf(false) + "<br>");
+        // document.write(arr.indexOf(123) + "<br>");
+        // document.write(arr.indexOf(null) + "<br>");
+        // document.write(arr.includes(1));
+
+        // indexOf는 항등연산자인 ===을 사용하므로 NaN은 인식이 불가하다.
+        // 따라서 includes로 존재만 확인 가능하다.
+        // var arr = [NaN];
+        // document.write(arr.indexOf(NaN) + "<br>");
+        // document.write(arr.includes(NaN));
+
+        // var users = [
+        //     {id : 1, name : "john"},
+        //     {id : 2, name : "pete"},
+        //     {id : 3, name : "mary"}
+        // ]
+
+        // var user = users.find(function(item){
+        //     return item.id == 1
+        // });
+        // document.write(user.name);
+
+
+        // map은 배열 모두에게 해당 함수를 적용시키는 것
+        // var lengths = ["bilbo", 'gandalf', 'nazgul'].map(function(item){
+        //     return item.length;
+        // })
+
+        // document.write(lengths)
+
+
+
+        // 배열 안의 값을 정렬하는 arr.sort(function (a, b) { return a - b; });
+
+        // let arr = [1, 2, 15];
+
+        // arr.sort(function (a, b) { return a - b; });
+
+        // alert(arr);  // 1, 2, 15
+
+
+        // reverse() : 배열을 거꾸로
+        // let arr = [1, 2, 3, 4, 5];
+        // arr.reverse();
+
+        // alert(arr); // 5,4,3,2,1
+
+        // split(x)의 x를 빈문자열로 놔두면 글자 자체 분리 가능
+        // let str = "test";
+
+        // alert(str.split('')); // t,e,s,t
+
+        // let army = {
+        //     minAge: 18,
+        //     maxAge: 27,
+        //     canJoin(user) {
+        //         return user.age >= this.minAge && user.age < this.maxAge;
+        //     }
+        // };
+
+        // let users = [
+        //     { age: 16 },
+        //     { age: 20 },
+        //     { age: 23 },
+        //     { age: 30 }
+        // ];
+
+        // // army.canJoin 호출 시 참을 반환해주는 user를 찾음
+        // let soldiers = users.filter(army.canJoin, army);
+
+        // for (var i = 0; i < soldiers.length; i++){
+        //     document.write(soldiers[i].age + "<br>");
+        // }
+
+        // function filterRange(arr, a, b) {
+        //     return arr.filter(function (item) {
+        //         return a <= item && item <= b;
+        //     })
+        // }
+
+        // let arr = [5, 3, 8, 1];
+
+        // let filtered = filterRange(arr, 1, 4);
+
+        // alert(filtered); // 3,1 (조건에 맞는 요소)
+
+        // alert(arr); // 5,3,8,1 (기존 배열은 변경되지 않았습니다.)
+
+
+        // var arr = [5,2,1,-10,8];
+        // arr.sort(function(a,b){return a -b});
+        // document.write(arr + "<br>");
+        // arr1 = arr.reverse();
+        // document.write(arr1)
+
+        // var arr = ['html', 'javascript', 'css'];
+
+        // function asd(arr){
+        //     return arr.slice().sort();
+        // }
+
+        // var sorted = asd(arr);
+
+        // document.write(sorted + "<br>");
+        // document.write(arr + "<br>");
+        // document.write(arr.sort());
+
+
+
+        // 이어진 함수의 딕셔너리값 불러오기
+        // let john = { name: "John", age: 25 };
+        // let pete = { name: "Pete", age: 30 };
+        // let mary = { name: "Mary", age: 29 };
+
+        // let arr = [john, pete, mary];
+
+        // function getAverage(arr){
+        //     sum1 = 0
+        //     for (var i in arr){
+        //         sum1 += arr[i]['age']
+        //         average1 = sum1 / arr.length;
+        //     }
+        //     return average1;
+        // }
+        // alert( getAverage(arr) );
+
+
+
+        // includes를 이용해서 배열 안의 중복을 제거하기
+        // function unique(arr) {
+        //     var result = [];
+        //     for (var i in arr){
+        //         if(!result.includes(arr[i])){
+        //             result.push(arr[i]);
+        //         }
+        //     }
+        //     return result;
+        // }
+
+        // let strings = ["Hare", "Krishna", "Hare", "Krishna",
+        //     "Krishna", "Krishna", "Hare", "Hare", ":-O"
+        // ];
+
+        // document.write(unique(strings)); // Hare, Krishna, :-O
+
+        // let users = [
+        //     { id: 'john', name: "John Smith", age: 20 },
+        //     { id: 'ann', name: "Ann Smith", age: 24 },
+        //     { id: 'pete', name: "Pete Peterson", age: 31 },
+        // ];
+
+        // function groupById(array) {
+        //     return array.reduce((obj, value) => {
+        //         obj[value.id] = value;
+        //         return obj;
+        //     }, {})
+        // }
+
+        // let usersById = groupById(users);
+
+        // document.write(usersById)
+    </script>
+</body>
+
+</html>
