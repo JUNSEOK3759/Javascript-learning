@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // class User {
+        //     constructor(name) { this.name = name; }
+        //     sayHi() { alert(this.name); }
+        // }
+
+        // console.log(typeof User);
+
+        // console.log(User == User.prototype.constructor)
+        // console.log(User.prototype.sayHi)
+        // console.log(Object.getOwnPropertyNames(User.prototype));
+
+        // 이렇게도 선언 가능
+        // let User = class {
+        //     sayHi() {
+        //         console.log('ㅎㅇㄹ ');
+        //     }
+        // }
+
+        // 다음과 같이도 선언 가능
+        // let User = class MyClass {
+        //     sayHi() {
+        //         alert(MyClass); // MyClass라는 이름은 오직 클래스 안에서만 사용할 수 있습니다.
+        //     }
+        // };
+
+        // new User().sayHi();
+
+        // function makeClass(phrase) {
+        //     return class {
+        //         sayHi() {
+        //             console.log(phrase)
+        //         }
+        //     }
+        // }
+
+        // let User = makeClass('ㅎㅇㄹ');
+        // new User().sayHi();
+
+        // class User {
+        //     constructor(name){
+        //         this.name = name;
+        //     }
+
+        //     get name() {
+        //         return this._name;
+        //     }
+
+        //     set name(value) {
+        //         if(value.length < 4) {
+        //             console.log('이름 짧아')
+        //             return;
+        //         }
+        //         this._name = value;
+        //     }
+
+        // }
+
+        // let user = new User('보라돌이');
+        // console.log(user.name);
+
+        // user = new User("");
+
+
+        // class User {
+        //     name = '보라';
+
+        //     // sayHi() {
+        //     //     console.log(`${this.name}님 안녕하세요!`)
+        //     // }
+        // }
+
+        // let user = new User();
+
+        
+
+        // // 클래스문 안에 prompt 사용 가능
+        // class User {
+        //     name = prompt("이름을 알려주세요.", "보라");
+        // }
+
+        // let user = new User();
+        // console.log(user.name); // 보라
+
+        // class Button {
+        //     constructor(value) {
+        //         this.value = value
+        //     }
+
+        //     click = () => {
+        //         console.log(this.value);
+        //     }
+        // }
+
+        // let button = new Button('안녕하세요');
+
+        // setTimeout(button.click, 1000);
+
+        class Clock {
+            constructor({template}) {
+                this.template = template
+            }
+
+            render (){
+                let date = new Date();
+
+                let hours = date.getHours(); 
+                if(hours < 10) hours = '0' + hours;
+
+                let mins = date.getMinutes();
+                if(mins < 10) mins = '0' + mins;
+
+                let secs = date.getSeconds();
+                if (secs < 10) secs = '0' + secs;
+
+                let output = this.template
+                    .replace('h', hours)
+                    .replace('m', mins)
+                    .replace('s', secs)
+
+                console.log(output)
+            }
+
+            stop() {
+                clearInterval(this.timer);
+            }
+
+            start() {
+                this.render();
+                this.timer = setInterval(() => this.render(), 1000);
+            }
+        }
+
+        let clock = new Clock({template : 'h:m:s'})
+        clock.start();
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

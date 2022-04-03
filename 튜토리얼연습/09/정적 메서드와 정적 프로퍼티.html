@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // class User{
+        //     static statitcM(){
+        //         console.log(this===User)
+        //     }
+        // }
+
+        // User.statitcM();
+
+
+
+        //위와 아래는 똑같다.
+
+        // class User { }
+
+        // User.statitcM = function () {
+        //     console.log(this === User)
+        // }
+
+
+        // User.statitcM();
+
+        // class Article {
+        //     constructor(title, date) {
+        //         this.title = title;
+        //         this.date = date;
+        //     }
+
+        //     static compare(articleA, articleB) {
+        //         return articleA.date - articleB.date;
+        //     }
+        // }
+
+        // let articles = [
+        //     new Article("HTML", new Date(2019, 1, 1)),
+        //     new Article("CSS", new Date(2019, 0, 1)),
+        //     new Article("JavaScript", new Date(2019, 11, 1))
+        // ]
+
+        // articles.sort(Article.compare);
+
+        // console.log(articles[0].title)
+
+
+        // class Article {
+        //     constructor(title, date){
+        //         this.title = title;
+        //         this.date = date;
+        //     }
+
+        //     static createTodays() {
+        //         return new this("today's digest", new Date())
+        //     }
+        // }
+
+        // let article = Article.createTodays();
+
+        // console.log(article.date);
+
+        class Animal {
+            static planet = ' 지구';
+
+            constructor(name, speed) {
+                this.speed = speed;
+                this.name = name;
+            }
+
+            run(speed = 0) {
+                this.speed += speed;
+                console.log(`${this.name}가 속도 ${this.speed}로 달립니다.`);
+            }
+
+            static compare(animalA, animalB) {
+                return animalA.speed - animalB.speed;
+            }
+
+        }
+
+        class Rabbit extends Animal {
+            hide() {
+                console.log(`${this.name}가 숨었습니다`)
+            }
+        }
+
+        let rabbits = [
+            new Rabbit('흰토끼', 10),
+            new Rabbit('검은 토끼', 5)
+        ]
+
+        rabbits.sort(Rabbit.compare);
+
+        rabbits[0].run()
+
+        console.log(Rabbit.planet);
+
+
+    </script>
+</body>
+
+</html>

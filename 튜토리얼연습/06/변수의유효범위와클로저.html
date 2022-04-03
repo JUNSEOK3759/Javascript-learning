@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // // 중첩함수 : 함수 안의 함수
+
+        // function sayHiBye(firstName, lastName) {
+
+        //     // 헬퍼(helper) 중첩 함수
+        //     function getFullName() {
+        //         return firstName + " " + lastName;
+        //     }
+
+        //     console.log("Hello, " + getFullName());
+        //     console.log("Bye, " + getFullName());
+
+        // }
+
+        // sayHiBye('fuck', 'you');
+
+
+
+        // function makeCounter(x) {
+        //     let count = x;
+
+        //     return function () {
+        //         return count++;
+        //     };
+        // }
+
+        // let counter = makeCounter(5);
+
+        // console.log(counter()); // 5
+        // console.log(counter()); // 6
+
+        // function sum(a) {
+        //     return function (b) {
+        //         return a + b;
+        //     }
+        // }
+
+        // console.log(sum(1)(2))
+
+
+
+        // 함수를 이용해 원하는 값만 걸러내기
+
+        // let arr = [1, 2, 3, 4, 5, 6, 7];
+
+        // function inBetween(x, y){
+        //     return function(a){
+        //         return a >= x && a <= y;
+        //     }
+        // }
+
+        // function inArray(x) {
+        //     return function(a){
+        //         return x.includes(a);
+        //     }
+        // }
+        // console.log(arr.filter(inBetween(3, 6))); // 3,4,5,6
+
+        //  console.log(arr.filter(inArray([1, 2, 10]))); // 1,2
+
+
+        // // 객체 안의 값을 받아서 정렬하기 
+
+        // function byField(x) {
+        //     return (a, b) => a[x] > b[x] ? 1 : -1;
+        // }
+
+        // let users = [
+        //     { name: "John", age: 20, surname: "Johnson" },
+        //     { name: "Pete", age: 18, surname: "Peterson" },
+        //     { name: "Ann", age: 19, surname: "Hathaway" }
+        // ];
+
+        // console.log(users.sort(byField('name')));
+        // console.log(users.sort(byField('age')));
+
+
+        // function makeArmy() {
+        //     let shooters = [];
+
+        //     let i = 0;
+        //     while (i < 10) {
+        //         let j = i;
+        //         let shooter = function () { // shooter 함수
+        //             console.log(j); // 몇 번째 shooter인지 출력해줘야 함
+        //         };
+        //         shooters.push(shooter);
+        //         i++;
+        //     }
+
+        //     return shooters;
+        // }
+
+        // let army = makeArmy();
+
+        // army[0](); 
+        // army[5]();
+
+        window.currentUser = {
+            name: "John"
+        };
+
+        console.log(currentUser.name);
+    </script>
+</body>
+
+</html>

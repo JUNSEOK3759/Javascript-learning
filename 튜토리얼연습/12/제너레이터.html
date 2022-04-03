@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function* generateSequence() {
+        //     yield 1;
+        //     yield 2;
+        //     return 3;
+        // }
+
+        // let generator = generateSequence();
+
+        // for (let value of generator) {
+        //     console.log(value); //1과 2만 출력된다.
+        //     // done : true는 무시되기 때문이다.
+        // }
+
+        // function* generateSequence() {
+        //     yield 1;
+        //     yield 2;
+        //     yield 3; // return을 yield로 바꿔주면 해결된다.
+        // }
+
+        // let generator = generateSequence();
+
+        // for (let value of generator) {
+        //     console.log(value); 
+        // }
+
+        // let sequence = [0, ...generateSequence()];
+
+        // console.log(sequence)
+
+        // let range = {
+        //     from : 1,
+        //     to : 5,
+
+
+        // }
+
+
+        // let range = {
+        //     from : 1,
+        //     to : 5,
+
+        //     *[Symbol.iterator]() {
+        //         for (let value = this.from; value <= this.to; value++){
+        //             yield value;
+        //         }
+        //     }
+        // }
+
+        // console.log(...range)
+
+
+        // function* generateSequence(start, end) {
+        //     for (let i = start; i <= end; i++) {
+        //         yield i;
+        //     }
+        // }
+
+        // function* generatePasswordCodes() {
+        //     yield* generateSequence(48, 57);
+        //     yield* generateSequence(65, 90);
+        //     yield* generateSequence(97, 122);
+        // }
+
+        // // 위와 같은 값 그러나 메모리가 위가 더 널널하다.
+
+        // function* generateSequence(start, end) {
+        //     for (let i = start; i <= end; i++) yield i;
+        // }
+
+        // function* generateAlphaNum() {
+
+        //     // yield* generateSequence(48, 57);
+        //     for (let i = 48; i <= 57; i++) yield i;
+
+        //     // yield* generateSequence(65, 90);
+        //     for (let i = 65; i <= 90; i++) yield i;
+
+        //     // yield* generateSequence(97, 122);
+        //     for (let i = 97; i <= 122; i++) yield i;
+
+        // }
+
+        // for (let code of generatePasswordCodes()) {
+        //     console.log(String.fromCharCode(code))
+        // }
+
+        // function* gen(){
+        //     let result = yield "2 + 2 = ? "
+
+        //     console.log(result);
+        // }
+
+        // let generator = gen();
+
+        // let question = generator.next().value;
+
+        // function* gen() {
+        //     let ask1 = yield "2 + 2 = ?";
+
+        //     console.log(ask1);
+
+        //     let ask2 = yield "3 * 3 = ?"
+
+        //     console.log(ask2)
+        // }
+
+        // let generator = gen();
+
+        // console.log(generator.next().value);
+        // console.log(generator.next(4).value);
+        // console.log(generator.next(9).done);
+
+
+
+        function* gen() {
+            try {
+                let result = yield "2 + 2 = ?"; // (1)
+
+                alert("위에서 에러가 던져졌기 때문에 실행 흐름은 여기까지 다다르지 못합니다.");
+            } catch (e) {
+                alert(e); // 에러 출력
+            }
+        }
+
+        let generator = gen();
+
+        let question = generator.next().value;
+
+        generator.throw(new Error("데이터베이스에서 답을 찾지 못했습니다.")); // (2)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

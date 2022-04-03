@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // new Promise((res, rej) => {
+        //     throw new Error('fuck')
+        // }).catch((error) => {
+        //     console.log('엘 ㅓ처리 완료')
+        // }).then(() => console.log('bitch'))
+
+        // new Promise((resolve, reject) => {
+        //     resolve("ok");
+        // }).then((result) => {
+        //     throw new Error("에러 발생!"); // 프라미스가 거부됨
+        // }).catch(result => {
+        //     console.log(result)
+        // }); // Error: 에러 발생!
+
+
+        // new Promise((res, rej) => {
+        //     throw new Error('fuck')
+        // }).catch ((error) =>{
+        //     if (error instanceof URIError) {
+
+        //     } else {
+        //         console.log('처리불가');
+
+        //         throw error
+        //     }
+        // }).then(() => {
+
+        // }).catch(error => {
+        //     console.log(`개같은에러 : ${error}`)
+        // })
+
+        new Promise(function (resolve, reject) {
+            setTimeout(() => {
+                throw new Error("에러 발생!");
+            }, 1000);
+        }).catch(alert);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

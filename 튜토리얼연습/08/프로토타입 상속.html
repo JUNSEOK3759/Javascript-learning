@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let animal = {
+        //     eats : true
+        // }
+
+        // let rabbit = {
+        //     jumps : true
+        // }
+
+        // rabbit.__proto__ = animal;
+        // //rabbit은 animal을 상속받는다.
+
+        // console.log(rabbit.eats)
+        // console.log(rabbit.jumps)
+
+        // let animal = {
+        //     eats : true,
+        //     walk() {
+        //         console.log("동물이 걷습니다.")
+        //     }
+        // }
+
+        // let rabbit = {
+        //     jumps : true,
+        //     __proto__ : animal //rabbit은 animal을 상속받는다.
+        // }
+
+        // rabbit.walk(); //상속받은 animal값 중 함수 사용
+
+        // let longEar = {
+        //     earlength : 10,
+        //     __proto__ : rabbit // longEar는 rabbit을 상속받고, 이는 animal도 상속받는 것이다
+        // }
+
+        // longEar.walk(); // 상속에 상속도 사용 가능
+        // console.log(longEar.jumps) // rabbit을 상속받기에 가능
+
+        // /*
+        // __proto__의 값은 객체나 null만 가능합니다. 다른 자료형은 무시된다.
+        // */
+
+        // rabbit.walk = function (){
+        //     console.log("토끼는 꺼엉충꺼엉충")
+        // }
+
+        // rabbit.walk();
+
+        // let user = {
+        //     name : 'john',
+        //     surname : 'smith',
+
+        //     set fullName(value){
+        //         [this.name, this.surname] = value.split(" ");
+        //     },
+
+        //     get fullName() {
+        //         return `${this.name} ${this.surname}`;
+        //     }
+        // };
+
+        // let admin = {
+        //     __proto__ : user, 
+        //     isAdmin : true
+        // }
+
+        // console.log(admin.fullName)
+
+        // admin.fullName = 'alice cooper';
+
+        // console.log(admin.fullName); // alice cooper
+        // // 이는 get에 들어가지 않고 set에만 들어갔기에
+        // // user.fullName을 출력하면 john smith가 나오는 것이다.
+        // console.log(user.fullName); // john smith
+
+
+
+        // let animal = {
+        //     walk(){
+        //         if (!this.isSleeping) {
+        //             console.log("동물이 걸어갑니다.");
+        //         }
+        //     },
+        //     sleep() {
+        //         this.isSleeping = true;
+        //     }
+        // };
+
+        // let rabbit = {
+        //     name : '하얀 토끼',
+        //     __proto__ : animal
+        // };
+
+        // rabbit.sleep();
+        // console.log(rabbit.isSleeping);
+
+
+        // let animal = {
+        //     eats : true,
+        //     fuck : true
+        // }
+
+        // let rabbit = {
+        //     jumps : true,
+        //     __proto__ : animal
+        // }
+
+        // console.log(Object.keys(rabbit)); // ['jumps']만 출력
+        // // Object.keys에서는 proto말고 원래 있던 것만 출력
+
+
+        // // Object.keys가 아닌 그냥 출력은 proto도 출력됨
+        // for (let prop in rabbit) {
+        //     console.log(prop)
+        // }
+
+        // for (let prop in rabbit){
+
+        //     // hasOwnProperty ==> 객체 자신의 프로퍼티만 찾는다.
+        //     let isOwn = rabbit.hasOwnProperty(prop);
+
+        //     if(isOwn){
+        //         console.log(prop); // jumps
+        //     }
+        //     else {
+        //         console.log(prop) // eats, fuck
+        //     }
+        // }
+
+        // let head = {
+        //     glasses: 1
+        // };
+
+        // let table = {
+        //     pen: 3,
+        //     __proto__ : head
+        // };
+
+        // let bed = {
+        //     sheet: 1,
+        //     pillow: 2,
+        //     __proto__ : table
+        // };
+
+        // let pockets = {
+        //     money: 2000,
+        //     __proto__ : bed
+        // };
+
+        // console.log(pockets.pen)
+
+        // console.log(bed.glasses)
+
+
+        let hamster = {
+            stomach: [],
+
+            eat(food) {
+                this.stomach = [food];
+            }
+        };
+
+        let speedy = {
+            __proto__: hamster
+        };
+
+        let lazy = {
+            __proto__: hamster
+        };
+
+        // 햄스터 speedy가 음식을 먹습니다.
+        speedy.eat("apple");
+        console.log(speedy.stomach); // apple
+
+        // 햄스터 lazy는 음식을 먹지 않았는데 배에 apple이 있다고 나오네요. 왜 그럴까요? lazy는 배가 비어있도록 고쳐주세요.
+        console.log(lazy.stomach); // apple
+
+
+
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

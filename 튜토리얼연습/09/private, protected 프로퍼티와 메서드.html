@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // class coff {
+        //     waterAmount = 0
+
+        //     constructor(power) {
+        //         this.power = power;
+        //         console.log(`전력량이 ${power}인 커피머신을 만듭니다`)
+        //     }
+        // }
+
+        // let coff1 = new coff(100);
+        // coff1.waterAmount = 200;
+
+        // 이제 waterAmount를 protected로 바꿔서 waterAmount를 통제해 보겠습니다.예시로 waterAmount를 0 미만의 값으로는 설정하지 못하도록 만들어 볼 겁니다.
+
+        // protected 프로퍼티 명 앞엔 밑줄 _이 붙습니다.
+
+        // class coff {
+        //     _waterAmount = 0;
+
+        //     set waterAmount(value) {
+        //         if (value < 0) throw new Error ('물 양 음수 안됨');
+        //         this._waterAmount = value
+        //     }
+
+        //     get waterAmount() {
+        //         return this._waterAmount;
+        //     }
+
+        //     constructor(power) {
+        //         this._power = power
+        //         console.log(`${this._power}h`)
+        //     }
+        // }
+
+        // let coffeeMachine = new coff(100);
+
+        // coffeeMachine.waterAmount = 200;
+        // coffeeMachine.waterAmount
+
+
+        // class Coff {
+        //     _waterAmount = 0;
+
+        //     setWaterAmount(value) {
+        //         if(value < 0) throw new Error('물의 양 음수 안됨')
+        //         this._waterAmount = value;
+        //     }
+
+        //     getwaterAmount() {
+        //         return this._waterAmount;
+        //     }
+        // }
+
+        // new Coff().setWaterAmount(100);
+
+        //     // 앞에 #이 붙으면 클래스 외부에서 접근이 불가능하다.
+        //     class CoffeeMachine {
+        //         #waterLimit = 200;
+
+        //         #checkWater(value) {
+        //             if (value < 0) throw new Error("물의 양은 음수가 될 수 없습니다.");
+        //             if (value > this.#waterLimit) throw new Error("물이 용량을 초과합니다.");
+        //         }
+
+        //     }
+
+        //     let coffeeMachine = new CoffeeMachine();
+
+        //     // 클래스 외부에서 private에 접근할 수 없음
+        //     coffeeMachine.#checkWater(); // Error
+        //     coffeeMachine.#waterLimit = 1000; // Error
+
+        // class CoffeeMachine {
+
+        //     #waterAmount = 0;
+
+        //     get waterAmount() {
+        //         return this.#waterAmount;
+        //     }
+
+        //     set waterAmount(value) {
+        //         if (value < 0) throw new Error("물의 양은 음수가 될 수 없습니다.");
+        //         this.#waterAmount = value;
+        //     }
+        // }
+
+        // let machine = new CoffeeMachine();
+
+        // machine.waterAmount = 100;
+        // alert(machine.#waterAmount); // Error
+        // alert(machine.waterAmount); // 100 나옴
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

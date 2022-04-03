@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function delay(ms) {
+        //     return new Promise((res, rej) => {
+        //         setTimeout(() => {
+        //             res('fuck')
+        //         }, ms)
+        //     })
+        // }
+
+        // delay(3000).then(() => console.log('3초후 실행'));
+
+        // new Promise((resolve, reject) => {
+        //     setTimeout(() => resolve('결과'), 2000)
+        // })
+
+        // .finally(() => console.log('프라미스가 준비되었습니다.'))
+        // .then((result) => console.log(result))
+        
+        
+        // let promise = new Promise(resolve => resolve('완료'))
+
+        // promise.then(result => console.log(result))
+
+
+        // function loadScript(src) {
+        //     return new Promise((res, rej) => {
+        //         let script = document.createElement('script');
+        //         script.src = src;
+
+        //         script.onload = () => res(script);
+        //         script.error = () =>  rej(new Error('fuck'))
+
+        //         document.head.append(script);
+        //     })
+        // }
+
+        // let promise = loadScript('asd')
+       
+        // promise.then(
+        //     script => console.log(`${script.src}를 불러왔습니다.`),
+        //     error => console.log(`error : ${error.message}`)
+        // )
+
+        // promise.then(script => console.log('또다른 핸들러...'))
+
+
+
+        function delay(ms) {
+            return new Promise((res, rej) => {
+                setTimeout(() => res('fuck'), ms)
+            })
+        }
+
+        delay(3000).then(() => console.log('3초후 실행'));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

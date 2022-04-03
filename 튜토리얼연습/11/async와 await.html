@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // // async를 함수 앞에 붙이면 해당 함수는 항상 프라미스를 반환한다.
+
+        // async function f(){
+        //     return 1;
+        // }
+
+        // f().then(result => console.log(result));
+
+
+        // // 위와 아래는 똑같다.
+
+
+        // async function f() {
+        //     return Promise.resolve(1);
+        // }
+
+        // f().then(console.log);
+
+        // await는 async 함수 안에서만 동작한다.
+
+        // async function f() {
+        //     let promise = new Promise((res, rej) => {
+        //         setTimeout(() => res('완료'), 1000)
+        //     })
+
+        //    let result = await promise;
+
+        //    console.log(result)
+        // }
+
+        // f()
+
+        // async function showAvatar() {
+        //     let response = await fetch('/article/promise-chaining/user.json')
+        //     let user = await response.json();
+
+        //     let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
+        //     let githubUser = await githubResponse.json();
+
+        //     let img = document.createElement('img');
+        // }
+
+        // class Thenable{
+        //     constructor(num) {
+        //         this.num = num
+        //     }
+        //     then(res, rej) {
+        //         console.log(res)
+        //         setTimeout(() => res(this.num * 2), 1000)
+        //     }
+        // }
+
+        // async function f() {
+        //     let result = await new Thenable(1);
+        //     console.log(result)
+        // }
+
+        // f(); // 2
+
+        // class Waiter {
+        //     async wait(){
+        //         return await Promise.resolve(1);
+        //     }
+        // }
+
+        // new Waiter()
+        // .wait()
+        // .then(console.log) // 1
+
+        // async function f() {
+
+        //     try {
+        //         let response = await fetch('http://유효하지-않은-주소');
+        //     } catch(err) {
+        //         console.log(err)
+        //     }
+        // }
+
+        // f();
+
+
+        // async function f() {
+        //     try {
+        //         let response = await fetch('http://유효하지-않은-url')
+        //         let user = await response.json();
+        //     } catch(err) {
+        //         console.log(err)
+        //     }
+        // }
+
+        // f();
+
+        // async function f() {
+        //     let response = await fetch('http://유효하지-않은-url');
+        // }
+
+        // f().catch(console.log)
+
+        // async function loadJson(url) {
+
+        //     let response = await fetch(url);
+
+        //     if(response.status == 200) {
+        //         let json = await response.json();
+        //         return json
+        //     }
+
+        //     throw new Error(response.status);
+
+
+        // }
+
+        // loadJson('no-such-user.json')
+        // .catch(console.log)
+
+        async function wait() {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            return 10;
+        }
+
+        function f() { 
+            wait().then(result => console.log(result))
+        }
+
+        f()
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

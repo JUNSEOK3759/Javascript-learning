@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Promise.all([
+        //     new Promise(resolve => setTimeout(() => resolve(1), 3000)), // 1
+        //     new Promise(resolve => setTimeout(() => resolve(2), 2000)), // 2
+        //     new Promise(resolve => setTimeout(() => resolve(3), 1000))  // 3
+        // ]).then(result => {
+        //     console.log(result)
+        // }); 
+
+        // let names = ['iliakan', 'remy', 'jeresig']
+
+        // let request = names.map(name => fetch(`https://api.github.com/users/${name}`));
+
+        // Promise.all(request)
+        // .then(responses => {
+        //     for(let response of responses) {
+        //         console.log(`${response.url} : ${response.status}`)
+        //     }
+
+        //     return responses;
+
+        // Promise.all([
+        //     new Promise((res,rej) => {
+        //         setTimeout(() => res(1), 1000)
+        //     }),
+        //     2, 3
+        // ]).then(result=> console.log(result))
+
+        let urls = [
+            'https://api.github.com/users/iliakan',
+            'https://api.github.com/users/remy',
+            'https://no-such-url'
+        ]
+
+        // Promise.allSettled(urls.map(url => fetch(url)))
+        //     .then(results => {
+        //         results.forEach((result, num) => {
+        //             if (result.status == 'fulfilled') {
+        //                 console.log(`${urls[num]}: ${result.value.status}`)
+        //             }
+        //             if (result.status == "rejected") {
+        //                 alert(`${urls[num]}: ${result.reason}`);
+        //             }
+
+        //         })
+        //     })
+
+        Promise.race([
+            new Promise((res, rej) => setTimeout(() => res(1), 1000)),
+            new Promise((res, rej) => setTimeout(() => rej(new Error('에러발생')), 500)),
+            new Promise((res, rej) => setTimeout(() => res(3), 3000))
+        ]).then((result) => console.log(result))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function* generateSequence(start, end) {
+        //     for (let i = start; i <= end; i++) {
+        //         yield i;
+        //     }
+        // }
+
+
+        // for(let value of generateSequence(1, 5)){
+        //     console.log(value);
+        // }
+
+
+        async function* generateSequence(start, end) {
+            for (let i = start; i <= end; i++) {
+                await new Promise(res => setTimeout(res, 1000))
+                yield i;
+            }
+        }
+
+
+        (async () => {
+            let generator = generateSequence(1, 5);
+            for await (let value of generator) {
+                console.log(value);
+            }
+        })();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

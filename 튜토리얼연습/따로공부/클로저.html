@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        //기본적 함수 
+        let one;
+        one = 1;
+
+        function addOne(num) {
+            console.log(one + num);
+        }
+
+        addOne(5);
+
+
+
+
+        function makeAdder(x) {
+            return function (y) {
+                return x + y;
+            }
+        }
+
+        // makeAdder 함수 안의 x에 3이라는 값이 들어간다.
+            // 그 뒤로 add3은 x 값을 가진 밑의 리턴 함수가 된다.
+            const add3 = makeAdder(3);
+
+            // 밑의 리턴 함수안의 y값에 2를 넣는다. 
+            console.log(add3(2));
+
+
+
+
+
+        /*
+        위와 같은 것을 정리하면 클로저라고 한다.
+        위의 함수 안의 return 안의 함수는 그 위의 함수에 접근이 가능하다.
+        밑의 식에서 보듯이 add3는 위의 makeAdder함수에 접근한 후
+        그 값을 받아서 이후에 받는 값과 더하는 것이다.
+        
+
+        결론적으로 위의 큰 함수가 x라고 하고 작은 함수가 y라 할 때,
+        add3가 생성되어서 add3가 그 안의 리턴함수인 y를 의미해도
+        상위함수인 x에 계속 접근이 가능하다는 것이다.
+        */
+
+
+        function makeCounter() {
+            let num = 0;
+
+            return function () {
+                return num++
+            }
+        }
+
+        let counter = makeCounter();
+        
+        console.log(counter()); // 0
+        console.log(counter()); // 1
+        console.log(counter()); // 2
+        
+
+        // makeCounter를 직접 출력 불가능하다.
+        // 리턴 값이 함수이기에 그 함수 안의 내용을 출력한다.
+        // 따라서 위와 같이 작성해야 값을 출력할 수 있다.
+        
+        //console.log(makeCounter());
+
+
+    </script>
+</body>
+
+</html>

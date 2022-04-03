@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // let animal = {
+        //     eats : true
+        // }
+
+        // function Rabbit(name) {
+        //     this.name = name;
+        // }
+
+        // Rabbit.prototype = animal;
+
+        // let rabbit = new Rabbit('흰 토끼');
+        // console.log(rabbit.eats)
+
+        // function Rabbit() { }
+        // // 함수를 만들기만 해도 디폴트 프로퍼티인 prototype이 설정됩니다.
+        // // Rabbit.prototype = { constructor: Rabbit }
+
+        // console.log(Rabbit.prototype.constructor == Rabbit); // true
+
+        // let rabbit = new Rabbit();
+
+        // console.log(rabbit.constructor == Rabbit);
+
+        function Rabbit(name) {
+            this.name = name;
+            console.log(name);
+        }
+
+        let rabbit = new Rabbit("흰 토끼");
+
+        let rabbit2 = new rabbit.constructor("검정 토끼");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

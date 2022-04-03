@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // export 옆에 default를 붙이면 개체가 하나밖에 없다는 것을 의미
+        export default class User {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+
+
+        // default가 없다면 원래
+        // import {User} from './user.js'가 되어야 하지만
+        // default가 있다면 중괄호는 빼줘도 된다.
+        import User from './user.js';
+        new User('John');
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

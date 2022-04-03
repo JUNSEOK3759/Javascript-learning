@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // class Rabbit { }
+        // let rabbit = new Rabbit();
+
+        // // rabbit이 클래스 Rabbit의 객체인가요?
+        // console.log(rabbit instanceof Rabbit); // true
+
+
+        // // 클래스가 아닌 생성자 함수
+        // function Rabbit() { }
+
+        // console.log(new Rabbit() instanceof Rabbit); // true
+
+        // let arr = [1, 2, 3];
+        // console.log(arr instanceof Array); // true
+        // // Object가 더 넓은 범위이므로 true가 나온다.
+        // console.log(arr instanceof Object); //true
+
+        // class Animal { }
+        // class Rabbit extends Animal { }
+
+        // let rabbit = new Rabbit();
+        // // 상속되어도 사용 가능
+        // console.log(rabbit instanceof Animal); // true
+
+        function Rabbit() { }
+        let rabbit = new Rabbit();
+
+        // 프로토타입이 변경됨
+        Rabbit.prototype = {};
+
+        // 프로토타입이 변경되었기에 더 이상 Rabbit이 아니다.
+        console.log(rabbit instanceof Rabbit); // false
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function sayHi() {
+        //     console.log("Hi");
+
+        //     // 함수를 몇 번 호출했는지 세봅시다.
+        //     sayHi.counter++;
+        // }
+        // sayHi.counter = 0; // 초깃값
+
+        // sayHi(); // Hi
+        // sayHi(); // Hi
+
+        // console.log(`호출 횟수: ${sayHi.counter}회`);
+
+        // function makeCounter() {
+
+        //     function counter(){
+        //         return counter.count++;
+        //     }
+
+        //     counter.count = 0;
+
+        //     return counter;
+        // }
+
+        // let counter = makeCounter();
+
+        // console.log(counter());
+        // console.log(counter());
+        // console.log(counter());
+
+
+        // let sayHi = function (who) {
+        //     console.log(`Hello, ${who}`);
+        // };
+
+        // sayHi('fuck')
+
+
+        // // 함수 변수 앞에 func를 써주면 자기 자신 호출이 가능하다.
+
+        // let sayHi = function func(who) {
+        //     if (who) {
+        //         console.log(`hello, ${who}`);
+        //     }
+        //     else {
+        //         func("guest");
+        //     }
+        // }
+        // // 아무것도 입력하지 않으면 guest가 대신 들어간다는 뜻이다.
+
+
+        // sayHi('john'); // hello, john
+        // sayHi(); // hello, guest
+
+
+
+        // /*
+        // 위와 같은 func를 만든 이유는 아래와 같다.
+        // */
+        // let sayHi = function (who) {
+        //     if (who) {
+        //         alert(`Hello, ${who}`);
+        //     } else {
+        //         sayHi("Guest"); // TypeError: sayHi is not a function
+        //     }
+        // };
+
+        // let welcome = sayHi;
+        // sayHi = null;
+
+        // /* 
+        // 함수를 새로운 변수에 할당하고, 원래 함수에 null값을 넣으면
+        // welcome 또한 호출이 되지 않는 것을 볼 수 있다.
+
+        // */
+        // welcome();
+
+        // /*
+        // 그러나 아래와 같이 출력을 하게 되면, 
+        // 기존 함수에 null 값을 넣어도 
+        // 새로운 변수에 할당한 것을 통해 값을 출력할 수 있다.
+        // */
+
+        // let sayHi = function func(who) {
+        //     if (who) {
+        //         alert(`Hello, ${who}`);
+        //     } else {
+        //         func("Guest"); // 원하는 값이 제대로 출력됩니다.
+        //     }
+        // };
+
+        // let welcome = sayHi;
+        // sayHi = null;
+
+        // welcome('john'); //hello, john
+        // welcome(); //hello, guest
+
+
+
+        // function makeCounter() {
+        //     let count = 0;
+
+        //     function counter() {
+        //         return count ++;
+        //     }
+
+        //     counter.set = (value) => count = value;
+        //     counter.decrease = () => count--;
+
+        //     return counter;
+        // }
+
+        // let counter = makeCounter();
+        // let coc = counter(counter.decrease());
+
+        // console.log(coc);
+
+        
+        
+        
+        // 몰라서 못품
+        
+        
+        
+        // function sum(x) {
+        //     let currentSum = x;
+
+        //     function f(b) {
+        //         currentSum += b;
+        //         return f;
+        //     }
+
+        //     f.toString = function() {
+        //         return currentSum;
+        //     }
+
+        //     return f;
+        // }
+
+        // console.log(sum(1)(2))
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

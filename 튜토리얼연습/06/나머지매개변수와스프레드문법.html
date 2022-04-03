@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function sum(...args){
+        //     let sum = 0
+
+        //     for (let i of args){
+        //         sum += i;
+        //     }
+        //     return sum
+        // }
+
+        // console.log(sum(1,2,3,4,5,6,7,8,9,10))
+
+        // function fuck(first, last, ...titles){
+        //     console.log(first +' ' + last);
+
+        //     for (let i of titles){
+        //         console.log(i)
+        //     }
+        //     console.log(titles.length);
+
+
+        //     // arguments는 함수에 사용된 값들의 길이를 나타냄
+        //     console.log(arguments.length)
+
+        //     console.log(arguments[0]); //fuck
+
+        //     console.log(arguments[4]); // 5번째 값이 없으므로 undefined
+        // }
+
+        // fuck('fuck', 'you', 'computer engineer', 'researcher');
+
+        // // first, last까지는 고정값인데, first만 입력이 되었으므로
+        // // last자리에는 undefined가 입력된다.
+        // fuck('bora');
+
+
+        // 화살표 함수에서 arguments 객체에 접근하면,
+        // 외부에 있는 일반함수의 arguments 객체를 가져온다.
+
+        // function f() {
+        //     let showArg = () => console.log(arguments[0]);
+        //     showArg();
+        // }
+
+        // f(1); // 1
+
+
+        // Math.max는 받은 인수 중 가장 큰 값을 반환한다.
+
+        //console.log(Math.max(3, 5, 1)); // 5
+
+
+        // Math.max는 배열이 아닌 숫자 목록을 인수로 받기에 배열을 입력할
+        // 경우 값 출력 불가
+
+        // let arr = [3, 5, 1];
+        // console.log(Math.max(arr)); // NaN
+
+
+        // // ...이 arr을 인수목록으로 확장시켜준다. 
+        // // 따라서 ...arr을 쓰면 배열 안에 있는 값 중 가장 큰 값을
+        // // 불러올 수 있다.
+        // console.log(Math.max(...arr)); // 5
+
+        // let arr1 = [1, -2, 3, 4];
+        // let arr2 = [8, 3, -8, 1];
+
+
+        // // 여러 개의 배열 받는 것도 가능하다.
+        // console.log(Math.max(...arr1, 2, ...arr2, 25)); //25
+
+        // let arr = [3, 5, 1];
+        // let arr2 = [8, 9, 15];
+
+        // // 이 경우 입력한 순서대로 합쳐진다.
+
+        // let merged = [0, ...arr, 2, ...arr2];
+
+        // console.log(merged); //[0, 3, 5, 1, 2, 8, 9, 15]
+
+        // ...str은 Array.from과 같은 역할을 한다.
+        // let str = 'fuckyou'
+
+        // console.log([...str]); //['f', 'u', 'c', 'k', 'y', 'o', 'u']
+        // console.log(Array.from(str)); //['f', 'u', 'c', 'k', 'y', 'o', 'u']
+
+        let arr = [1, 2, 3]
+        let arrCopy = [...arr];
+
+        console.log(JSON.stringify(arr) === JSON.stringify(arrCopy));
+        // true (둘의 요소가 같음)
+
+        console.log(arr === arrCopy); //false (참조가 다르기에)
+
+
+        // 참조가 다르기에 기존 배열에 무슨 값을 넣어도
+        // 복사본에 영향이 없고 역도 같음.
+        arr.push(4);
+        arrCopy.push(5);
+        console.log(arr); // [1, 2, 3, 4]
+        console.log(arrCopy); // [1, 2, 3, 5]
+
+        
+
+        // 객체도 배열과 마찬가지 
+
+        
+        let obj = { a: 1, b: 2, c: 3 };
+        let objCopy = { ...obj }; // 객체를 펼쳐서 각 요소를 분리후, 매개변수 목록으로 만든 다음에
+        // 매개변수 목록을 새로운 객체에 할당함
+
+        // 객체 복사본의 프로퍼티들이 기존 객체의 프로퍼티들과 진짜 같을까요?
+        alert(JSON.stringify(obj) === JSON.stringify(objCopy)); // true
+
+        // 두 객체는 같을까요?
+        alert(obj === objCopy); // false (참조가 다름)
+
+        // 참조가 다르므로 기존 객체를 수정해도 복사본은 영향을 받지 않습니다.
+        obj.d = 4;
+        alert(JSON.stringify(obj)); // {"a":1,"b":2,"c":3,"d":4}
+        alert(JSON.stringify(objCopy)); // {"a":1,"b":2,"c":3}
+    </script>
+</body>
+
+</html>

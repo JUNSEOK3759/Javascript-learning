@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // setTimeout(func, x000) ===> func 함수를 x초 후에 실행
+
+        // function say(a, b) {
+        //     console.log(a + ' 먹어 ' + b)
+        // }
+        // setTimeout(say, 1000, 'fuck you', '새끼야');
+
+
+        // let timerId = setTimeout(function () {
+        //     console.log('안녕하세요')
+        // }, 1000);
+
+        // console.log(timerId)
+
+        // clearTimeout(timerId);
+        // console.log(timerId);
+
+
+        // setInterval(func, x000) ===> func 함수를 x초마다 실행
+
+        // let timerId = setInterval(function (){
+        //     console.log('fuck');
+        // }, 2000);
+
+        // setTimeout(()=> {clearInterval(timerId); console.log('정지'); }, 5000)
+
+
+        // setInterval로 숫자 차례로 불러오기
+
+        // function printNumber(x, y) {
+        //     let current = x;
+
+        //     let timerId = setInterval(function () {
+        //         console.log(current);
+        //         if (current == y) {
+        //             clearInterval(timerId);
+        //         }
+        //         current++;
+        //     }, 1000)
+        // }
+
+        // printNumber(3, 5)
+
+        // // 중첩 setTimeout로 숫자 차례로 불러오기
+
+        // function printNumber(x, y) {
+        //     let current = x;
+
+        //     setTimeout(function go(){
+        //        console.log(current);
+        //        if(current < y){
+        //             setTimeout(go, 1000) 
+        //        } 
+        //        current++
+        //     }, 1000)
+        // }
+
+        // printNumber(3, 5)
+
+    </script>
+</body>
+
+</html>

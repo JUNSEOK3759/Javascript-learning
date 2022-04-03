@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // // Generator : 함수의 실행을 중간에 멈췄다가 재개할 수 있는 기능
+        // // iterable하다(반복이 가능하다).
+        // function* fn() {
+        //     yield 1;
+        //     yield 2;
+        //     yield 3;
+        //     return "finish"
+        // }
+
+        // const a = fn();
+        // const arr = [1, 2, 3, 4, 5];
+
+        // function* fn() {
+        //     yield 4;
+        //     yield 5;
+        //     yield 6;
+        // }
+
+        // const a = fn();
+        
+        // function* fn() {
+        //     //a.next() 실행
+        //     const num1 = yield "첫번째 숫자를 입력해주세요";
+        //     console.log(num1)
+        //     // a.next(2)실행하면 num1에 값인 2가 담긴다.
+        //     const num2 = yield "두번째 숫자를 입력해주세요";
+        //     console.log(num2)
+        //     // a.next(4)실행하면 num2에 값인 4가 담긴다.
+        //     // 그럼과 동시에 return값인 6이 출력된다.
+        //     return num1 + num2
+        // }
+
+        // const a = fn();
+
+        
+        // while문이 계속해서 반복되기 때문에 generator에서는 사용을 자제해야
+        // 한다.
+        // function* fn() {
+        //     let index = 0;
+        //     while(true) {
+        //         yield index++;
+        //     }
+        // }
+
+        // const a = fn();
+
+        function* gen1() {
+            yield "w";
+            yield "o";
+            yield "r";
+            yield "l";
+            yield "d";
+        }
+
+        function* gen2() {
+            yield "Hello, ";
+            yield* gen1();
+            yield "!";
+        }
+
+
+        // 앞에 ...을 붙인 이유는 for of처럼 gen 값을 펼쳐주는
+        // 역할을 한다.
+        console.log(...gen2());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

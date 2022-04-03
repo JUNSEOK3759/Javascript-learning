@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let target = {};
+        // let proxy = new Proxy(target, {});
+
+        // proxy.test = 5;
+        // console.log(target.test)
+
+        // console.log(proxy.test)
+        // for (let key in proxy){
+        //     console.log(proxy);
+        // }
+
+        // let numbers = [0, 1, 2]
+
+        // numbers = new Proxy(numbers, {
+        //     get(target, prop){
+        //         if (prop in target) {
+        //             return target[prop];
+        //         } else {
+        //             return 0;
+        //         }
+        //     }
+        // })
+
+        // console.log(numbers[1])
+
+        // let dictionary = {
+        //     'Hello' : '안녕하시고',
+        //     'Bye' : '안녕히가시고'
+        // }
+
+        // dictionary = new Proxy(dictionary, {
+        //     get(target, prop) {
+        //         if (prop in target){
+        //             return target[prop]
+        //         }
+        //         else {
+        //             return prop;
+        //         }
+        //     }
+        // });
+
+        // console.log(dictionary['Hello'])
+        // console.log(dictionary['sd'])
+
+
+        // let numbers = [];
+        // console.log(numbers)
+
+        // numbers = new Proxy(numbers, {
+        //     set(target, prop, val) {
+        //         if (typeof val == 'number') {
+        //             target[prop] = val;
+        //             return true;
+        //         }
+        //         else {
+        //             return false;
+        //         }
+        //     }
+        // })
+
+        // numbers.push(1);
+        // numbers.push(2);
+        // console.log(numbers)
+
+        // numbers.push("test"); // Error: 'set' on proxy
+
+
+        // alert("윗줄에서 에러가 발생했기 때문에 이 줄은 절대 실행되지 않습니다.");
+
+
+        // let user = {
+        //     name : 'John',
+        //     age : 30,
+        //     _password : "***"
+        // }
+
+        // user = new Proxy(user, {
+        //     ownKeys(target){
+        //         return Object.keys(target).filter(key => !key.startsWith('_'));
+        //     }
+        // });
+
+        // for(let key in user) console.log(key);
+
+        // console.log(Object.keys(user));
+        // console.log(Object.values(user));
+
+        // let range = {
+        //     start: 1,
+        //     end: 10
+        // };
+
+        // range = new Proxy(range, {
+        //     has(target, prop) {
+        //         return prop >= target.start && prop <= target.end;
+        //     }
+        // })
+
+
+        // console.log(5 in range) // true
+
+        // function delay(f, ms) {
+        //     return function () {
+        //         setTimeout(() => f.apply(this, arguments), ms)
+        //     }
+        // }
+
+        // function sayHi(user) {
+        //     console.log(`Hello, ${user}`)
+        // }
+
+        // sayHi = delay(sayHi, 3000);
+
+        // sayHi('john');
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

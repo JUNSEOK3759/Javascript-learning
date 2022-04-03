@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const mike = {
+        //     name : 'mike'
+        // }
+
+        // const tom = {
+        //     name : 'tom'
+        // }
+
+        // function showThisName(){
+        //     console.log(this.name);
+        // }
+
+        // showThisName.call(mike);
+        // showThisName.call(tom);
+
+        // function update(birth, occup) {
+        //     this.birth = birth;
+        //     this.occup = occup;
+        // }
+
+
+        // // update.call(x, y, z)
+        // // x ==> update 함수 안에 this로 사용될 값
+        // // y, z ==> update의 매개변수들을 순서대로 적음
+        // update.call(mike, 1999, 'singer');
+
+        // console.log(mike) // {name: 'mike', birth: 1999, occup: 'singer'}
+
+        // // apply는 call과 비슷하게 사용되지만,
+        // // 매개변수는 배열로 받는다.
+        // update.apply(tom, [2002, 'teacher']);
+        // console.log(tom);
+
+        // const num = [3, 1, 10, 6, 4]
+        // // const minNum = Math.min(num); // NaN
+        // // const maxNum = Math.max(num); // NaN
+
+        // // const minNum = Math.min(...num); // 1
+        // // const maxNum = Math.max(...num); // 10
+
+
+        // // Math에는 this가 딱히 필요하지 않아서 아무 값인 null을 넣은 것이다.
+        // const minNum = Math.min.apply(null, num); // 1
+        // // = Math.min.apply(null, [3, 1, 10, 6, 4])
+
+        // const maxNum = Math.max(null, ...num); // 10
+
+        // console.log(minNum);
+        // console.log(maxNum);
+
+        // function update(birth, occup) {
+        //     this.birth = birth;
+        //     this.occup = occup;
+        // }
+        // // bind(x)는 this값을 무조건 x로 지정하는 것이다. 
+        // const updateMike = update.bind(mike);
+
+        // updateMike(1980, 'police');
+        // console.log(mike);
+
+        const user = {
+            name : 'mike',
+            showName : function (){
+                console.log(`hello, ${this.name}`);
+            }
+        }
+
+        user.showName();
+
+        let fn = user.showName;
+        // 새로운 변수에 할당할 때, mike가 출력이 안됨
+        fn(); // hello,          mike 안나옴
+        
+
+        // call이나 apply를 쓰면 됨
+        fn.call(user);
+        fn.apply(user);
+
+        let boundfn = fn.bind(user);
+        // bind를 사용하여 boundfn에 할당하여 hello, mike 출력
+        boundfn();
+    </script>
+</body>
+
+</html>

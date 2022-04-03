@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // const pr = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         //resolve('ok')
+        //         reject(new Error('err....'))
+        //     }, 3000)
+        // })
+
+        // pr.then(
+        //     function (result) {
+        //         console.log(result + '가지러가자..')
+        //     },
+        //     function (err) {
+        //         console.log('다시 주문해주세요...')
+        //     }
+        // )
+
+        // 위와 같은 코드이지만 밑의 코드가 더 가독성이 좋다.
+
+        /*
+        then ==> resolve가 실행되었을 때
+        catch ==> 에러가 났을 때
+        finally ==> then, catch 둘 중 아무거나 실행되어도 마지막에 실행되는 것
+        */
+
+        // pr.then(
+        //     function (result) {
+        //         console.log(result + '가지러가자..')
+        //     }
+        // ).catch(
+        //     function (err) {
+        //         console.log(err)
+        //     }
+        // ).finally(
+        //     function (){
+        //         console.log('--- 주문 끝 ---')
+        //     }
+        // )
+
+        // const f1 = function (callback) {
+        //     setTimeout(function (){
+        //         console.log('1번 주문 완료')
+        //         callback();
+        //     }, 1000);
+        // }
+
+        // const f2 = function (callback) {
+        //     setTimeout(function (){
+        //         console.log('2번 주문 완료')
+        //         callback();
+        //     }, 3000);
+        // }
+
+        // const f3 = function (callback) {
+        //     setTimeout(function (){
+        //         console.log('3번 주문 완료')
+        //         callback();
+        //     }, 2000);
+        // }
+
+        // f1(function () {
+        //     f2(function () {
+        //         f3(function () {
+        //             console.log('끝')
+        //         })
+        //     })
+        // })
+
+
+        // const f1 = function () {
+        //     return new Promise((res, rej) => {
+        //         setTimeout(function () {
+        //             res('1번 주문 완료 ')
+        //         }, 1000)
+        //     })
+        // }
+
+        // const f2 = function (message) {
+        //     console.log(message)
+        //     return new Promise((res, rej) => {
+        //         setTimeout(function () {
+        //             rej(new Error('xxx'))
+        //         }, 3000)
+        //     })
+        // }
+
+        // const f3 = function (message) {
+        //     console.log(message)
+        //     return new Promise((res, rej) => {
+        //         setTimeout(function () {
+        //             res('3번 주문 완료 ')
+        //         }, 2000)
+        //     })
+        // }
+
+
+        // // 배열 안에 하나라도 완료되면 끝남
+        // // 1번이 1초이므로 1번 주문 완료만 나오고 끝
+        // Promise.race([f1(), f2(), f3()]).then((res) =>{
+        //     console.log(res);
+        // }).finally('끝')
+
+
+        // 전부 다 끝나면 다 같이 출력함
+        // f2가 res라면 3초로 가장 길다. 따라서 3초 후에 모든
+        // 것들을 다 출력함
+        // Promise.all([f1(), f2(), f3()]).then((res) =>{
+        //     console.log(res);
+        // }).finally('끝')
+
+
+        // f1()
+        // .then(res => f2(res))
+        // .then(res => f3(res))
+        // .then(res => console.log(res))
+        // .catch(console.log)
+        // .finally (() => console.log('끝'))
+        // // 1의 res안의 글을 2가 받아서 출력하는 형태
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

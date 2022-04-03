@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let user = {
+        //     name : 'john',
+        //     surname : 'fucker',
+            
+        //     get fullName() {
+        //         return `${this.name} ${this.surname}`
+        //     },
+
+        //     set fullName(value) {
+        //         [this.name, this.surname] = value.split(' ');
+        //     }
+        // }
+
+        // console.log(user.fullName)
+
+        // user.fullName = 'alice cooper';
+        // console.log(user.fullName)
+        // console.log(user.name)
+        // console.log(user.surname)
+
+        let user = {
+            get name(){
+                return this._name
+            },
+
+            set name(value){
+                if(value.length < 4) {
+                    console.log("입력하신 값 넘 짧음")
+                    return ;
+                } 
+                else {
+                    this._name = value;
+                }
+            }
+        }
+
+        user.name = 'pete';
+        console.log(user.name)
+        user.name = ''
+    </script>
+</body>
+
+</html>

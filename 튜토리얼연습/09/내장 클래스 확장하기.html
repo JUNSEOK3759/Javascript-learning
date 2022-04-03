@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 내장 클래스인 배열을 확장
+        // class PowerArray extends Array{
+        //     isEmpty(){
+        //         return this.length === 0;
+        //     }
+        // }
+
+        // let arr = new PowerArray(1,2,5,10,50);
+        // console.log(arr.isEmpty());
+
+        // let filterArr = arr.filter(item => item >= 10);
+        // console.log(filterArr);
+        // console.log(filterArr.isEmpty())
+
+//         class PowerArray extends Array {
+//             isEmpty() {
+//                 return this.length === 0;
+//             }
+            
+//             static get [Symbol.species] () {
+//                 return Array;
+//             }
+//         }
+
+//         let arr = new PowerArray(1,2,5,10,50);
+//         console.log(arr.isEmpty());
+
+//         // filter는 arr.constructor[Symbol.species]를 생성자로 사용해 새로운 배열을 만듭니다.
+// let filteredArr = arr.filter(item => item >= 10);
+
+// // filteredArr는 PowerArray가 아닌 Array의 인스턴스입니다.
+// alert(filteredArr.isEmpty()); // Error: filteredArr.isEmpty is not a function
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
